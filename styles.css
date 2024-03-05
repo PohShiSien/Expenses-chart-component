@@ -1,0 +1,153 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --soft-red: hsl(10, 79%, 65%);
+    --cyan: hsl(186, 34%, 60%);
+    --dark-brown: hsl(25, 47%, 15%);
+    --medium-brown: hsl(28, 10%, 53%);
+    --cream: hsl(27, 66%, 92%);
+    --very-pale-orange: hsl(33, 100%, 98%);
+}
+
+body {
+    background-color: var(--cream);
+    font-family: 'DM Sans', 'sans-serif';
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.container1 {
+    background-color: var(--soft-red);
+    max-width: 800px;
+    max-height: 900px;
+    color: var(--very-pale-orange);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.balance-money {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.spending {
+    background-color: var(--very-pale-orange);
+    max-height: 500px;
+    max-width: 800px;
+    border-radius: 1rem;
+    padding: 1.5rem;
+
+}
+
+.statsList {
+    height: 9em;
+    margin: 2em 0em 0.2em 0em;
+    gap: 0.8em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    width: 2.3em;
+    height: 100%;
+    gap: 0.8em;
+    display: flex;
+    flex-direction: column;
+}
+
+.barContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+}
+
+.bar {
+    background-color: var(--soft-red);
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+}
+
+
+.day {
+    text-align: center;
+}
+
+.bar:hover::before {
+    content: attr(data-barStat);
+    background-color: var(--dark-brown);
+    color: var(--cream);
+    border-radius: 5px;
+    padding: 0.6em 0.7em 0.6em 0.7em;
+    font-weight: 700;
+    font-size: 0.8em;
+    width: 3em;
+    top: -2.2rem;
+    margin-left: -0.6rem;
+    position: absolute;
+}
+
+.bar:hover {
+    background-color: hsl(0, 84%, 76%)
+}
+
+#max {
+    background-color: var(--cyan);
+}
+
+#max:hover {
+    background-color: rgb(140, 192, 216);
+}
+
+.chart {
+    display: flex;
+    flex-direction: column;
+    height: 12em;
+    gap: 1em;
+    justify-content: center;
+}
+
+.chart-wrapper {
+    width: 2em;
+    display: flex;
+    align-items: flex-end;
+    height: 90%;
+}
+
+.chart-value {
+    height: var(--height);
+    background: var(--soft-red);
+    width: 100%;
+    border-radius: 0.25em;
+}
+
+.monthly {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    text-align: right;
+    border-top: 2px solid var(--cream);
+    padding-top: 1rem;
+    color: var(--medium-brown);
+}
+
+.this-month-money {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+}
+
+.last-month-money {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+}
